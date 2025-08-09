@@ -1,283 +1,216 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <!--
-    个人网站-单页模板 v2
-    - 纯静态、单文件、可直接放到 GitHub Pages / Cloudflare Pages / 任意静态空间
-    - 中文注释友好，小白可改：把“你的名字/描述/链接”等占位符替换即可
+  <!-- 学者/作家风格双栏框架（参考 peterjbentley.com 的信息分区思路）
+       - 左侧：头像+姓名+快速导航（sticky）
+       - 右侧：主要内容分区（关于 / 作品与著作 / 媒体与演讲 / 教学与研究 / 联系）
+       - 纯静态，适合 GitHub Pages / Cloudflare Pages / 任意静态托管
+       - 内置中英双语切换（localStorage 记忆）
   -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>你的名字 — 个人网站</title>
-  <meta name="description" content="你的名字的个人网站：简介、项目、文章与联系方式。" />
+  <title>彭桢 - 个人网站</title>
+  <meta name="description" content="你的名字的个人网站：简介、著作、媒体采访、演讲、研究与联系方式。" />
   <meta name="theme-color" content="#0ea5e9" />
-  <!-- Open Graph / SEO 基础 -->
-  <meta property="og:title" content="你的名字 — 个人网站" />
-  <meta property="og:description" content="你的名字的个人网站：简介、项目、文章与联系方式。" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://example.com" />
-  <meta property="og:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'><rect width='100%' height='100%' fill='%230ea5e9'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='72' fill='white'>你的名字</text></svg>" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🌊</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📚</text></svg>">
   <style>
-    /* ========= 设计变量（深浅色模式） ========= */
-    :root {
-      --bg: #0b1020;
-      --bg-soft: #121833;
-      --text: #e7ecf4;
-      --muted: #a7b0c3;
-      --card: #0f1730;
-      --border: #1f2a4c;
-      --accent: #38bdf8; /* sky-400 */
-      --accent-contrast: #06131a;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      color-scheme: dark;
+    :root{
+      --bg:#0b1020; --bg-soft:#121833; --text:#e7ecf4; --muted:#a7b0c3; --card:#0f1730; --border:#1f2a4c; --accent:#38bdf8; --accent-contrast:#06131a; --shadow:0 10px 30px rgba(0,0,0,.35);
+      color-scheme:dark;
     }
-    [data-theme="light"] {
-      --bg: #ffffff;
-      --bg-soft: #f6f7fb;
-      --text: #111827;
-      --muted: #475569;
-      --card: #ffffff;
-      --border: #e5e7eb;
-      --accent: #0ea5e9; /* sky-500 */
-      --accent-contrast: #ffffff;
-      --shadow: 0 10px 25px rgba(2,6,23,.08);
-      color-scheme: light;
-    }
+    [data-theme="light"]{ --bg:#ffffff; --bg-soft:#f6f7fb; --text:#111827; --muted:#475569; --card:#ffffff; --border:#e5e7eb; --accent:#0ea5e9; --accent-contrast:#ffffff; --shadow:0 10px 25px rgba(2,6,23,.08); color-scheme:light;}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Noto Sans,Helvetica,Arial; background:radial-gradient(1200px 600px at 80% -10%, rgba(56,189,248,.10), transparent 60%), var(--bg); color:var(--text); line-height:1.65}
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    img{max-width:100%; display:block}
 
-    /* ========= 基础排版 ========= */
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background: radial-gradient(1200px 600px at 80% -10%, rgba(56,189,248,.12), transparent 60%), var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-    }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    img { max-width: 100%; display: block; }
+    /* 顶部条 */
+    header{position:sticky; top:0; z-index:40; backdrop-filter:saturate(140%) blur(8px); background:color-mix(in oklab, var(--bg) 70%, transparent); border-bottom:1px solid var(--border)}
+    .topbar{display:flex; align-items:center; justify-content:space-between; height:60px; max-width:1100px; margin:0 auto; padding:0 16px}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800}
+    .brand .logo{width:26px; height:26px; display:grid; place-items:center; border-radius:8px; background:var(--accent); color:var(--accent-contrast); box-shadow:var(--shadow)}
+    .controls{display:flex; gap:8px}
+    .btn{display:inline-flex; align-items:center; gap:6px; border-radius:999px; padding:8px 12px; font-weight:700; border:1px solid var(--border); background:var(--card); color:var(--text)}
 
-    /* ========= 无障碍 ========= */
-    .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
-    .skip-link:focus { position: fixed; left: 16px; top: 16px; width: auto; height: auto; padding: 8px 12px; background: var(--accent); color: var(--accent-contrast); border-radius: 8px; z-index: 1000; }
+    /* 双栏布局 */
+    .wrap{max-width:1100px; margin:0 auto; padding:16px}
+    .layout{display:grid; grid-template-columns: 280px 1fr; gap:20px}
+    @media (max-width:900px){ .layout{grid-template-columns: 1fr} }
 
-    /* ========= 头部导航 ========= */
-    header { position: sticky; top: 0; z-index: 50; backdrop-filter: saturate(140%) blur(8px); background: color-mix(in oklab, var(--bg) 70%, transparent); border-bottom: 1px solid var(--border); }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .brand { font-weight: 800; letter-spacing: .2px; display: inline-flex; align-items: center; gap: 10px; }
-    .brand .logo { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 8px; background: var(--accent); color: var(--accent-contrast); font-weight: 900; box-shadow: var(--shadow); }
-    .links a { margin-left: 18px; color: var(--muted); font-weight: 600; }
-    .links a:hover { color: var(--text); }
-    .toggle { border: 1px solid var(--border); background: var(--card); color: var(--text); padding: 8px 12px; border-radius: 999px; cursor: pointer; }
+    /* 侧栏 */
+    aside{position:sticky; top:84px; align-self:start}
+    .profile{background:var(--card); border:1px solid var(--border); border-radius:18px; padding:16px; box-shadow:var(--shadow)}
+    .avatar{width:88px; height:88px; border-radius:20px; background:var(--bg-soft); display:grid; place-items:center; font-size:42px; margin-bottom:10px}
+    .name{font-size:22px; font-weight:900; margin:0}
+    .tag{color:var(--muted); margin:4px 0 10px}
+    .sidelinks{display:grid; gap:6px; margin-top:10px}
+    .sidelinks a{display:flex; align-items:center; justify-content:space-between; background:var(--card); border:1px solid var(--border); border-radius:12px; padding:8px 10px}
 
-    /* ========= Hero ========= */
-    .hero { padding: 80px 0 48px; }
-    h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.12; margin: 0 0 14px; }
-    .subtitle { color: var(--muted); font-size: clamp(16px, 2.1vw, 18px); max-width: 65ch; }
-    .cta { margin-top: 26px; display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn { display: inline-flex; align-items: center; gap: 8px; border-radius: 999px; padding: 10px 16px; font-weight: 700; border: 1px solid var(--border); background: var(--card); color: var(--text); text-decoration: none; box-shadow: var(--shadow); }
-    .btn:hover { transform: translateY(-1px); transition: transform .2s ease; }
-    .btn-primary { background: var(--accent); color: var(--accent-contrast); border-color: color-mix(in oklab, var(--accent), black 15%); }
-    .btn-ghost { background: transparent; }
+    /* 主内容 */
+    main{display:grid; gap:16px}
+    section{background:var(--card); border:1px solid var(--border); border-radius:18px; padding:18px; box-shadow:var(--shadow)}
+    .section-title{font-size:22px; margin:0 0 6px}
+    .section-desc{color:var(--muted); margin:0 0 14px}
 
-    /* ========= 公共 Section ========= */
-    section { padding: 56px 0; }
-    .section-header { margin-bottom: 20px; }
-    .section-title { font-size: clamp(22px, 3.5vw, 30px); margin: 0 0 8px; }
-    .section-desc { color: var(--muted); margin: 0; }
+    .grid{display:grid; gap:12px}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    @media (max-width:900px){ .grid-2,.grid-3{grid-template-columns:1fr} }
+    .card{border:1px solid var(--border); border-radius:14px; padding:12px; background:var(--bg-soft)}
+    .badge{display:inline-block; font-size:12px; padding:3px 8px; border-radius:999px; border:1px solid var(--border); color:var(--muted)}
 
-    /* ========= 卡片 & 网格 ========= */
-    .grid { display: grid; gap: 16px; }
-    @media (min-width: 720px){ .grid-3 { grid-template-columns: repeat(3, 1fr); } }
-    @media (min-width: 720px){ .grid-2 { grid-template-columns: repeat(2, 1fr); } }
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 16px; box-shadow: var(--shadow); }
-    .card h3 { margin: 0 0 6px; font-size: 18px; }
-    .card p { margin: 0; color: var(--muted); }
-    .badge { display: inline-block; font-size: 12px; padding: 3px 8px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); }
+    footer{color:var(--muted); padding:24px 0 56px; text-align:center}
 
-    /* ========= 写作列表 ========= */
-    .post { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 14px 0; border-bottom: 1px dashed var(--border); }
-    .post a { font-weight: 600; }
-    .post time { color: var(--muted); font-variant-numeric: tabular-nums; }
-
-    /* ========= 联系 & 页脚 ========= */
-    .contact { display: flex; flex-wrap: wrap; gap: 12px; }
-    footer { padding: 32px 0 56px; color: var(--muted); }
-    .footgrid { display: grid; gap: 16px; align-items: center; }
-    @media (min-width: 720px){ .footgrid { grid-template-columns: 1fr auto; } }
-
-    /* ========= 轻量进场动画（可删除） ========= */
-    .reveal { opacity: 0; transform: translateY(8px); will-change: transform, opacity; }
-    .reveal.reveal-in { opacity: 1; transform: translateY(0); transition: all .5s cubic-bezier(.2,.8,.2,1); }
+    .skip-link{position:absolute; left:-9999px}
+    .skip-link:focus{position:fixed; left:16px; top:16px; background:var(--accent); color:var(--accent-contrast); padding:8px 12px; border-radius:8px}
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main">跳到主要内容</a>
   <header>
-    <div class="container nav">
-      <div class="brand">
-        <span class="logo" aria-hidden>∿</span>
-        <a href="#" aria-label="主页">你的名字</a>
+    <div class="topbar">
+      <div class="brand"><span class="logo">📚</span><span id="brand" data-i18n="brand">你的名字</span></div>
+      <div class="controls">
+        <button class="btn" id="langToggle" aria-label="切换语言">中/EN</button>
+        <button class="btn" id="themeToggle" aria-label="切换主题">🌓</button>
       </div>
-      <nav class="links" aria-label="主导航">
-        <a href="#about">关于</a>
-        <a href="#projects">项目</a>
-        <a href="#writing">文章</a>
-        <a href="#contact">联系</a>
-        <button class="toggle" type="button" id="themeToggle" aria-label="切换深浅色">🌓</button>
-      </nav>
     </div>
   </header>
 
-  <main id="main" class="container">
-    <!-- Hero -->
-    <section class="hero reveal">
-      <h1>你好，我是 <span style="white-space:nowrap">你的名字</span> ✨</h1>
-      <p class="subtitle">一句话自我介绍：例如「前端爱好者 / 在读学生 / 独立开发者」。这里再补充 1–2 句你正在做的事，以及你感兴趣的方向与关键词，方便他人快速了解你。</p>
-      <div class="cta">
-        <a class="btn btn-primary" href="#projects">查看项目</a>
-        <a class="btn btn-ghost" href="#contact">联系我</a>
-        <a class="btn" href="resume.pdf" download>下载简历.pdf</a>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="reveal">
-      <header class="section-header">
-        <h2 class="section-title">关于我</h2>
-        <p class="section-desc">放 3–5 句介绍：经历、技能、兴趣，或你正在寻找的机会。</p>
-      </header>
-      <div class="grid grid-3">
-        <div class="card"><h3>技能</h3><p>HTML / CSS / JavaScript / Git / …</p></div>
-        <div class="card"><h3>擅长</h3><p>组件化设计、可访问性、性能优化、…</p></div>
-        <div class="card"><h3>正在学习</h3><p>React / TypeScript / Python / …</p></div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="reveal">
-      <header class="section-header">
-        <h2 class="section-title">项目精选</h2>
-        <p class="section-desc">挑 3–6 个最能代表你的作品，放 Demo & 源码链接。</p>
-      </header>
-      <div class="grid grid-3">
-        <article class="card">
-          <div class="badge">2025 · 个人</div>
-          <h3>项目 A</h3>
-          <p>一句话说明项目做了什么、为谁解决了什么问题。</p>
-          <p>
-            <a href="#">在线预览</a> · <a href="#">源代码</a>
-          </p>
-        </article>
-        <article class="card">
-          <div class="badge">2024 · 团队</div>
-          <h3>项目 B</h3>
-          <p>可以列出核心技术栈：HTML/CSS/JS、Web Components…</p>
-          <p>
-            <a href="#">在线预览</a> · <a href="#">源代码</a>
-          </p>
-        </article>
-        <article class="card">
-          <div class="badge">2023 · 开源</div>
-          <h3>项目 C</h3>
-          <p>有数字更好：加载加速 40% / 用户 5k+ / Star 300+。</p>
-          <p>
-            <a href="#">在线预览</a> · <a href="#">源代码</a>
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Writing -->
-    <section id="writing" class="reveal">
-      <header class="section-header">
-        <h2 class="section-title">最近写作</h2>
-        <p class="section-desc">如果你没有博客，可以把这一块删掉或先留两篇占位。</p>
-      </header>
-      <div>
-        <div class="post">
-          <a href="#">从 0 到 1：我做的第一个网页</a>
-          <time datetime="2025-08-01">2025-08-01</time>
+  <div class="wrap">
+    <div class="layout">
+      <aside>
+        <div class="profile">
+          <div class="avatar" aria-hidden>👤</div>
+          <h1 class="name" data-i18n="name">彭桢</h1>
+          <p class="tag" data-i18n="tag">博士研究生/计算机技术爱好者</p>
+          <nav class="sidelinks" aria-label="侧边导航">
+            <a href="#about"><span data-i18n="nav.about">关于我</span> ↘</a>
+            <a href="#works"><span data-i18n="nav.works">作品与著作</span> ↘</a>
+            <a href="#media"><span data-i18n="nav.media">媒体与演讲</span> ↘</a>
+            <a href="#contact"><span data-i18n="nav.contact">联系</span> ↘</a>
+          </nav>
         </div>
-        <div class="post">
-          <a href="#">我学到的 5 个前端小技巧</a>
-          <time datetime="2025-07-10">2025-07-10</time>
-        </div>
-        <div class="post">
-          <a href="#">如何把静态站部署到 GitHub Pages</a>
-          <time datetime="2025-06-18">2025-06-18</time>
-        </div>
-      </div>
-    </section>
+      </aside>
 
-    <!-- Contact -->
-    <section id="contact" class="reveal">
-      <header class="section-header">
-        <h2 class="section-title">联系我</h2>
-        <p class="section-desc">欢迎合作、内推、交流学习～</p>
-      </header>
-      <div class="contact">
-        <a class="btn btn-primary" href="mailto:hello@example.com?subject=%E8%81%94%E7%B3%BB%E4%BD%A0&body=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%83%B3%E8%88%8D...">📧 邮件</a>
-        <a class="btn" href="https://github.com/yourname" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn" href="https://x.com/yourname" target="_blank" rel="noopener">X / Twitter</a>
-        <a class="btn" href="https://linkedin.com/in/yourname" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-    </section>
-  </main>
+      <main id="main">
+        <section id="about">
+          <h2 class="section-title" data-i18n="about.title">关于我</h2>
+          <p class="section-desc" data-i18n="about.desc">我是帝国理工学院交通风险管理中心博士生，研究方向为空中交通风险管理</p>
+          <div class="grid grid-3">
+            <div class="card"><div class="badge" data-i18n="about.badge1">身份</div><p data-i18n="about.item1">帝国理工学院博士生</p></div>
+            <div class="card"><div class="badge" data-i18n="about.badge2">关注</div><p data-i18n="about.item2">AI应用 / 多模态算法/ 空中交通 / 创业</p></div>
+          </div>
+        </section>
+
+        <section id="works">
+          <h2 class="section-title" data-i18n="works.title">作品与著作</h2>
+          <p class="section-desc" data-i18n="works.desc">放书籍、专栏、应用、课程等条目，可链接到购买页/出版社会员页/源码。</p>
+          <div class="grid grid-3">
+            <article class="card">
+              <div class="badge" data-i18n="works.type.book">图书</div>
+              <h3>书名 A</h3>
+              <p data-i18n="works.blurbA">一句话介绍这本书面向谁、解决什么问题。</p>
+              <p><a href="#" data-i18n="works.buy">购买/详情</a></p>
+            </article>
+            <article class="card">
+              <div class="badge" data-i18n="works.type.column">专栏</div>
+              <h3>专栏 B</h3>
+              <p data-i18n="works.blurbB">刊物/平台名称，主题与链接。</p>
+              <p><a href="#" data-i18n="works.read">阅读</a></p>
+            </article>
+            <article class="card">
+              <div class="badge" data-i18n="works.type.app">应用/项目</div>
+              <h3>项目 C</h3>
+              <p data-i18n="works.blurbC">一句话说明亮点或数据（用户/下载/Star）。</p>
+              <p><a href="#" data-i18n="works.demo">在线演示</a> · <a href="#" data-i18n="works.code">源代码</a></p>
+            </article>
+          </div>
+        </section>
+
+        <section id="media">
+          <h2 class="section-title" data-i18n="media.title">媒体与演讲</h2>
+          <p class="section-desc" data-i18n="media.desc">采访、播客、视频节目、公开演讲与活动记录。</p>
+          <div class="grid grid-2">
+            <div class="card"><h3>Talk/Podcast #1</h3><p data-i18n="media.item1">活动名称 / 主办方 / 日期</p><p><a href="#" data-i18n="media.watch">观看/收听</a></p></div>
+            <div class="card"><h3>Talk/Podcast #2</h3><p data-i18n="media.item2">活动名称 / 主办方 / 日期</p><p><a href="#" data-i18n="media.watch">观看/收听</a></p></div>
+          </div>
+        </section>
+
+        <section id="teaching">
+          <h2 class="section-title" data-i18n="teach.title">教学与研究</h2>
+          <p class="section-desc" data-i18n="teach.desc">课程、指导学生、研究兴趣与论文精选链接。</p>
+          <div class="grid">
+            <div class="card"><h3 data-i18n="teach.courses">课程</h3><ul>
+              <li>课程 A — <a href="#" data-i18n="teach.syllabus">课纲/资料</a></li>
+              <li>课程 B — <a href="#" data-i18n="teach.syllabus">课纲/资料</a></li>
+            </ul></div>
+            <div class="card"><h3 data-i18n="teach.pubs">论文精选</h3><ul>
+              <li><a href="#">Paper 1</a> · 2024</li>
+              <li><a href="#">Paper 2</a> · 2023</li>
+            </ul></div>
+          </div>
+        </section>
+
+        <section id="contact">
+          <h2 class="section-title" data-i18n="contact.title">联系</h2>
+          <p class="section-desc" data-i18n="contact.desc">欢迎合作、采访或演讲邀请。</p>
+          <p>
+            <a class="btn" href="ucbvzp1@ucl.ac.uk" data-i18n="contact.email">电子邮箱</a>
+            <a class="btn" href="https://github.com/pbisonedgit" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn" href="https://linkedin.com/in//桢-彭-097b03307/" target="_blank" rel="noopener">LinkedIn</a>
+          </p>
+        </section>
+      </main>
+    </div>
+  </div>
 
   <footer>
-    <div class="container footgrid">
-      <small>© <span id="y"></span> 你的名字. 保留所有权利。</small>
-      <a href="#" class="btn btn-ghost" aria-label="返回顶部">返回顶部 ↑</a>
-    </div>
+    <small>© <span id="y"></span> <span data-i18n="brand">你的名字</span>. <span data-i18n="rights">保留所有权利。</span></small>
   </footer>
 
-  <noscript>
-    <div class="container" style="padding-bottom:24px;color:var(--muted)">⚠️ 你的浏览器已禁用 JavaScript。网站仍可浏览，但深浅色切换与进场动画等增强功能将不可用。</div>
-  </noscript>
-
-  <!-- 轻量脚本：主题切换 + 进场动画 + 年份 -->
   <script>
-    // 主题：读取偏好
-    (function(){
-      try {
-        const saved = localStorage.getItem('theme');
-        if (saved) document.documentElement.setAttribute('data-theme', saved);
-        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-          document.documentElement.setAttribute('data-theme', 'light');
-        }
-      } catch (e) {}
-    })();
-    // 切换
-    document.getElementById('themeToggle').addEventListener('click', function(){
-      const cur = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', cur);
-      try { localStorage.setItem('theme', cur); } catch(e){}
-    });
-    // 进场动画
-    const io = ('IntersectionObserver' in window) && new IntersectionObserver((entries)=>{
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('reveal-in'); io.unobserve(e.target); } });
-    }, { rootMargin: '0px 0px -10% 0px' });
-    document.querySelectorAll('.reveal').forEach(el => io && io.observe(el));
-    // 年份
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+    // 主题读取
+    (function(){ try{ const saved = localStorage.getItem('theme'); if(saved) document.documentElement.setAttribute('data-theme', saved); else if (matchMedia('(prefers-color-scheme: light)').matches) document.documentElement.setAttribute('data-theme','light'); }catch(e){} })();
 
-  <!-- 结构化数据（可改） -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "你的名字",
-    "url": "https://example.com",
-    "sameAs": [
-      "https://github.com/yourname",
-      "https://x.com/yourname",
-      "https://linkedin.com/in/yourname"
-    ]
-  }
+    // i18n 词典
+    (function(){
+      const i18n={
+        zh:{ brand:'彭桢', name:'彭桢', tag:'博士研究生/计算机技术爱好者',
+          'nav.about':'关于我','nav.works':'作品与著作','nav.media':'媒体与演讲','nav.teaching':'教学与研究','nav.contact':'联系',
+          'about.title':'关于我','about.desc':'这里放 3-5 句简介：你的研究/创作方向、任职、奖项或媒体经历摘要。','about.badge1':'身份','about.item1':'某大学 荣誉讲师；某公司 顾问；独立作者','about.badge2':'关注','about.item2':'AI / 进化计算 / 科普写作 / 创业','about.badge3':'代表性','about.item3':'出版 X 本书；受邀 X 场演讲；媒体采访 X 次',
+          'works.title':'作品与著作','works.desc':'放书籍、专栏、应用、课程等条目，可链接到购买页/出版社会员页/源码','works.type.book':'图书','works.type.column':'专栏','works.type.app':'应用/项目','works.blurbA':'一句话介绍这本书面向谁、解决什么问题。','works.blurbB':'刊物/平台名称，主题与链接。','works.blurbC':'一句话说明亮点或数据（用户/下载/Star）。','works.buy':'购买/详情','works.read':'阅读','works.demo':'在线演示','works.code':'源代码',
+          'media.title':'媒体与演讲','media.desc':'采访、播客、视频节目、公开演讲与活动记录','media.item1':'活动名称 / 主办方 / 日期','media.item2':'活动名称 / 主办方 / 日期','media.watch':'观看/收听',
+          'teach.title':'教学与研究','teach.desc':'课程、指导学生、研究兴趣与论文精选链接','teach.courses':'课程','teach.pubs':'论文精选','teach.syllabus':'课纲/资料',
+          'contact.title':'联系','contact.desc':'欢迎合作、采访或演讲邀请','contact.email':'📧 电子邮箱',
+          'rights':'保留所有权利。'
+        },
+        en:{ brand:'Zhen Peng', name:'Zhen Peng', tag:'PhD student / Computer Scientist',
+          'nav.about':'About','nav.works':'Works & Books','nav.media':'Media & Talks','nav.teaching':'Teaching & Research','nav.contact':'Contact',
+          'about.title':'About','about.desc':'Write 3-5 sentences introducing your research/creative focus, roles, awards or media highlights.','about.badge1':'Roles','about.item1':'Honorary Lecturer; Industry Advisor; Independent Author','about.badge2':'Interests','about.item2':'AI / Evolutionary Computation / Science Writing / Entrepreneurship','about.badge3':'Highlights','about.item3':'X books; X invited talks; X media interviews',
+          'works.title':'Works & Books','works.desc':'List books, columns, apps or courses with links to buy, publisher or source code.','works.type.book':'Book','works.type.column':'Column','works.type.app':'App/Project','works.blurbA':'One‑liner about audience and value.','works.blurbB':'Publication/platform, topic and link.','works.blurbC':'Key highlight or metric (users/downloads/Stars).','works.buy':'Buy/Details','works.read':'Read','works.demo':'Live Demo','works.code':'Source',
+          'media.title':'Media & Talks','media.desc':'Interviews, podcasts, videos, public talks and events.','media.item1':'Event / Host / Date','media.item2':'Event / Host / Date','media.watch':'Watch/Listen',
+          'teach.title':'Teaching & Research','teach.desc':'Courses, supervision, interests and selected publications.','teach.courses':'Courses','teach.pubs':'Selected Publications','teach.syllabus':'Syllabus/Materials',
+          'contact.title':'Contact','contact.desc':'Open to collaboration, interviews or speaking invitations.','contact.email':'📧 Email',
+          'rights':'All rights reserved.'
+        }
+      };
+      let lang= localStorage.getItem('lang') || (navigator.language && navigator.language.startsWith('zh') ? 'zh':'en');
+      function apply(){
+        document.documentElement.lang = (lang==='zh')?'zh-CN':'en';
+        document.querySelectorAll('[data-i18n]').forEach(el=>{ const key=el.getAttribute('data-i18n'); const t=i18n[lang][key]; if(t) el.innerHTML=t; });
+        const langBtn=document.getElementById('langToggle'); if(langBtn) langBtn.textContent=(lang==='zh')?'中/EN':'EN/中';
+      }
+      apply();
+      document.getElementById('langToggle').addEventListener('click',()=>{ lang=(lang==='zh')?'en':'zh'; try{localStorage.setItem('lang',lang)}catch(e){} apply(); });
+    })();
+
+    // 主题切换
+    document.getElementById('themeToggle').addEventListener('click',()=>{ const cur=document.documentElement.getAttribute('data-theme')==='light'?'dark':'light'; document.documentElement.setAttribute('data-theme',cur); try{localStorage.setItem('theme',cur)}catch(e){} });
+
+    // 年份
+    document.getElementById('y').textContent=new Date().getFullYear();
   </script>
 </body>
 </html>
