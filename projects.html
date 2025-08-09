@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="projects.metaTitle">Projects — Your Name</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="./index.html">Your Name</a>
+      <nav aria-label="Main navigation">
+        <a href="./research.html" data-i18n="nav.research">Research</a>
+        <a aria-current="page" href="./projects.html" data-i18n="nav.projects">Projects</a>
+        <a href="./cv.html" data-i18n="nav.cv">CV</a>
+        <button id="langToggle" class="btn ghost" type="button" aria-label="Switch language">中文</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 data-i18n="projects.title">Projects</h1>
+    <p class="muted" data-i18n="projects.desc">A concise list of projects you participated in. Group by role or year if helpful.</p>
+
+    <div class="cards">
+      <article class="card">
+        <h3>Project A</h3>
+        <p data-i18n="projects.a">One‑liner about what it is, your role, and the impact or metric.</p>
+        <p><a href="#" data-i18n="projects.demo">demo</a> · <a href="#" data-i18n="projects.code">code</a> · <a href="#" data-i18n="projects.paper">paper</a></p>
+      </article>
+      <article class="card">
+        <h3>Project B</h3>
+        <p data-i18n="projects.b">Technologies: HTML/CSS/JS (or Python/…)</p>
+        <p><a href="#" data-i18n="projects.demo">demo</a> · <a href="#" data-i18n="projects.code">code</a></p>
+      </article>
+      <article class="card">
+        <h3>Project C</h3>
+        <p data-i18n="projects.c">Key achievements, users, downloads, or collaboration details.</p>
+        <p><a href="#" data-i18n="projects.site">website</a></p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="container foot">
+    <small>© <span id="y"></span> Your Name.</small>
+  </footer>
+  <script src="./lang.js"></script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>

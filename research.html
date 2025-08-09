@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="research.metaTitle">Research — Your Name</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="./index.html">Your Name</a>
+      <nav aria-label="Main navigation">
+        <a aria-current="page" href="./research.html" data-i18n="nav.research">Research</a>
+        <a href="./projects.html" data-i18n="nav.projects">Projects</a>
+        <a href="./cv.html" data-i18n="nav.cv">CV</a>
+        <button id="langToggle" class="btn ghost" type="button" aria-label="Switch language">中文</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 data-i18n="research.title">Research</h1>
+    <p class="muted" data-i18n="research.desc">Brief description of your research areas and goals.</p>
+
+    <h2 data-i18n="research.recent">Recent progress</h2>
+    <ul class="list">
+      <li>
+        <strong data-i18n="research.p1">Project / Paper title</strong> — <span data-i18n="research.p1desc">short update (YYYY-MM).</span> <a href="#" data-i18n="research.preprint">preprint/code</a>
+      </li>
+      <li>
+        <strong data-i18n="research.p2">Experiment / Dataset</strong> — <span data-i18n="research.p2desc">what changed or improved (YYYY-MM).</span> <a href="#" data-i18n="research.notes">notes</a>
+      </li>
+      <li>
+        <strong data-i18n="research.p3">Talk / Seminar</strong> — <span data-i18n="research.p3desc">slides or video (YYYY-MM).</span> <a href="#" data-i18n="research.slides">slides/video</a>
+      </li>
+    </ul>
+
+    <h2 data-i18n="research.pubs">Selected publications</h2>
+    <ol class="pubs">
+      <li>Author1, <strong>Your Name</strong>, Author3. <span data-i18n="research.paper">Paper title.</span> <em>Conference/Journal</em>, Year. <a href="#" data-i18n="research.pdf">pdf</a> · <a href="#" data-i18n="research.code">code</a></li>
+      <li>Author1, <strong>Your Name</strong>. <span data-i18n="research.paper">Paper title.</span> <em>Venue</em>, Year. <a href="#" data-i18n="research.pdf">pdf</a> · <a href="#" data-i18n="research.code">code</a></li>
+    </ol>
+  </main>
+
+  <footer class="container foot">
+    <small>© <span id="y"></span> Your Name.</small>
+  </footer>
+  <script src="./lang.js"></script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
