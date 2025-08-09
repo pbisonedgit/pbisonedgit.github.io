@@ -13,8 +13,8 @@
       'index.edu.bachelor.detail1':'Thesis: Analysis and Simulation of Human Behavior Models in Underground Space (Supervisor: Prof. Liu Fang)',
       'index.edu.bachelor.detail2':'GPA: 85.58%','index.edu.bachelor.detail3':'Awards: The Tongji University Undergraduate Excellence Scholarship (2022-2023)',
 
-      'index.highlights':'Highlights','index.h1':'Paper / Award / Talk (YYYY).','index.h2':'Project / OSS contribution with a quick metric.',
-      'index.h3':'Teaching / Volunteering / Competition result.','index.link':'link',
+      'index.news':'News',
+      'index.n1':'May 2023: My first SCI-indexed paper, introducing a new structural health monitoring method, was accepted by Applied Science!',
 
       'contact.title':'Contact','contact.email':'E-mail',
 
@@ -41,10 +41,8 @@
       'index.edu.bachelor.detail1':'学位论文：地下步行空间的驻留行为与模拟研究（导师：刘芳教授）',
       'index.edu.bachelor.detail2':'GPA: 85.58%','index.edu.bachelor.detail3':'奖励及荣誉：同济大学优秀本科生奖学金（2022-2023）',
       
-      'index.highlights':'亮点',
-      'index.h1':'论文 / 奖项 / 演讲（年份）。',
-      'index.h2':'项目 / 开源贡献（附一个小指标）。',
-      'index.h3':'教学 / 志愿 / 竞赛成绩。','index.link':'链接',
+      'index.news':'最新消息',
+      'index.n1':'2023年5月：我的第一篇SCI论文被Applied Science接收！',
 
       'contact.title':'联系方式','contact.email':'电子邮箱',
 
