@@ -26,11 +26,14 @@
 
       'footer.rights':'All rights reserved.',
       'research.metaTitle':'Publications','research.title':'Publications','research.desc':'My research interests lie in multimodal algorithms, with a focus on applications in transportation risk management.',
-      'research.pubs':'Publications',
-      'projects.metaTitle':'Projects','projects.title':'Projects','projects.desc':'A concise list of projects you participated in. Group by role or year if helpful.',
-      'projects.a':'One-liner about what it is, your role, and the impact or metric.',
-      'projects.b':'Technologies: HTML/CSS/JS (or Python/…)','projects.c':'Key achievements, users, downloads, or collaboration details.','projects.demo':'demo','projects.code':'code','projects.paper':'paper','projects.site':'website',
-      'cv.metaTitle':'CV ','cv.title':'Curriculum Vitae','cv.desc':'Keep it short on the web page; link a downloadable PDF.','cv.edu':'Education','cv.eduItem':'Degree, University, Years — Thesis title (optional).','cv.exp':'Experience','cv.expItem':'Role, Organization, Years — brief description of responsibilities and outcomes.','cv.awards':'Selected awards','cv.awardsItem':'Award name, Year.','cv.download':'Download CV (PDF)'
+      'research.pubs':'Academic articles',
+
+      'projects.metaTitle':'Projects','projects.title':'Projects','projects.desc':'Here are the projects that I have participated in',
+      'projectsa.title':'Leading, Research on Seismic Response Characteristics of high-rise buildings based on seismic ambient noise, (X2021441), 2021-2022, 4150 RMB.',
+      'projects.a':'I served as team leader for this research group. We explored the response characteristics of buildings and developed a structural health monitoring method.',
+      'projectsb.title':'Participating in, Establishment of Intelligent Operation Platform for Critical Municipal Urban Infrastructure, (2020YFB2103300), National Key Research and Development Program.',
+      'projects.b':'I served as a data collector and programmer on this project. We explored the mechanisms of human behavior in underground stations and proposed an operations optimization methodology.',
+      'projects.demo':'demo','projects.code':'code','projects.paper':'paper','projects.site':'website'
     },
     zh: {
       'nav.research':'研究进展','nav.projects':'参与项目','nav.cv':'个人简历',
@@ -57,10 +60,13 @@
       'footer.rights':'保留所有权利。',
       'research.metaTitle':'研究进展','research.title':'研究进展','research.desc':'我的研究兴趣主要在用于交通风险管理的多模态算法。',
       'research.pubs':'已发表论文',
-      'projects.metaTitle':'参与项目','projects.title':'参与项目','projects.desc':'简要列出你参与的项目；必要时按角色或年份分组。',
-      'projects.a':'一句话说明项目、你的角色与影响/数据。','projects.b':'技术栈示例：HTML/CSS/JS（或 Python/...）',
-      'projects.c':'亮点、用户数、下载量或合作信息。','projects.demo':'演示','projects.code':'代码','projects.paper':'论文','projects.site':'网站',
-      'cv.metaTitle':'个人简历','cv.title':'个人简历','cv.desc':'网页上保持简洁；可提供可下载的 PDF。','cv.edu':'教育经历','cv.eduItem':'学位，学校，年份 — 论文题目（可选）。','cv.exp':'工作/研究经历','cv.expItem':'职位，机构，年份 — 职责与结果的简述。','cv.awards':'所获奖项','cv.awardsItem':'奖项名称，年份。','cv.download':'下载简历（PDF）'
+
+      'projects.metaTitle':'Projects','projects.title':'参与项目','projects.desc':'以下为参与了且完成结题的国内外项目',
+      'projectsa.title':'领导，基于地震背景噪音观测的超高建筑地震响应特征研究，（X2021441），2021-2022，4150元。',
+      'projects.a':'我作为项目负责人，带领团队探索了建筑物的地震响应特征，并基于所提取到的特征模式开发出一种无损结构健康监测技术。',
+      'projectsb.title':'参与，城市重大市政设施智能化运维与管控平台构建及应用示范，(2020YFB2103300)，国家重点研发计划。',
+      'projects.b':'我作为数据采样员和程序员参与了刘芳教授的项目团队。我们探索了在地铁站中的行人行为模式，并基于此开发出考虑人因的基础设施管理优化方法。',
+      'projects.demo':'demo','projects.code':'开源代码','projects.paper':'发表论文','projects.site':'项目网站'
     }
   };
 
