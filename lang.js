@@ -4,15 +4,21 @@
 
   const dict = {
     en: {
-      'nav.research':'Research','nav.projects':'Projects','nav.cv':'CV',
+      'nav.research':'Publications','nav.projects':'Projects','nav.cv':'Curriculum Vitae',
+
       'index.title':'Hello, I\'m Zhen Peng.',
       'index.lead':'I am a PhD student at the Transport Risk Management Centre (TRMC), Imperial College London. I am seeking opportunities to deploy low-altitude transportation systems.',
-      'btn.seeResearch':'Research','btn.seeProjects':'Projects','btn.cv':'CV','index.about':'About',
-      'index.aboutDesc':'I am a PhD student at the Transport Risk Management Centre (TRMC), Imperial College London. I am seeking opportunities to deploy low-altitude transportation systems and welcome collaboration.',
+      'btn.seeResearch':'Publications','btn.seeProjects':'Projects','btn.cv':'CV',
+      
+      'index.edu':'Education', 'index.edu.bachelor.title':'Bachelor',
+      'index.edu.bachelor.meta':'B.Sc. in Civil Engineering, Tongji University, 2020-2024',
+      'index.edu.bachelor.detail1':'Thesis: Analysis and Simulation of Human Behavior Models in Underground Space (Supervisor: Prof. Liu Fang)',
+      'index.edu.bachelor.detail2':'GPA: 85.58%','index.edu.bachelor.detail3':'Awards: The Tongji University Undergraduate Excellence Scholarship (2022-2023)',
+
       'index.highlights':'Highlights','index.h1':'Paper / Award / Talk (YYYY).','index.h2':'Project / OSS contribution with a quick metric.',
       'index.h3':'Teaching / Volunteering / Competition result.','index.link':'link',
       'footer.rights':'All rights reserved.',
-      'research.metaTitle':'Research','research.title':'Research','research.desc':'Brief description of your research areas and goals.',
+      'research.metaTitle':'Publications','research.title':'Publications','research.desc':'Brief description of your research areas and goals.',
       'research.recent':'Recent progress','research.p1':'Project / Paper title','research.p1desc':'short update (YYYY-MM).',
       'research.preprint':'preprint/code','research.p2':'Experiment / Dataset','research.p2desc':'what changed or improved (YYYY-MM).',
       'research.notes':'notes','research.p3':'Talk / Seminar','research.p3desc':'slides or video (YYYY-MM).','research.slides':'slides/video',
@@ -25,9 +31,17 @@
     },
     zh: {
       'nav.research':'研究进展','nav.projects':'参与项目','nav.cv':'个人简历',
-      'index.title':'你好，我是彭桢。','index.lead':'我目前是帝国理工学院交通风险管理中心在读博士生。我致力于将低空交通系统在现实社会中落地，欢迎合作交流！',
+
+      'index.title':'你好，我是彭桢。',
+      'index.lead':'我目前是帝国理工学院交通风险管理中心在读博士生。我致力于将低空交通系统在现实社会中落地，欢迎合作交流！',
       'btn.seeResearch':'查看研究','btn.seeProjects':'查看项目','btn.cv':'下载简历','index.about':'关于',
-      'index.aboutDesc':'写 3–5 句介绍你的背景、研究/工作方向，以及你正在寻求的合作/机会。','index.highlights':'亮点',
+
+            'index.edu':'教育经历', 'index.edu.bachelor.title':'本科教育',
+      'index.edu.bachelor.meta':'土木工程学士，同济大学，2020-2024',
+      'index.edu.bachelor.detail1':'学位论文：地下步行空间的驻留行为与模拟研究（导师：刘芳教授）',
+      'index.edu.bachelor.detail2':'GPA: 85.58%','index.edu.bachelor.detail3':'奖励及荣誉：同济大学优秀本科生奖学金（2022-2023）',
+      
+      'index.highlights':'亮点',
       'index.h1':'论文 / 奖项 / 演讲（年份）。',
       'index.h2':'项目 / 开源贡献（附一个小指标）。',
       'index.h3':'教学 / 志愿 / 竞赛成绩。','index.link':'链接',
