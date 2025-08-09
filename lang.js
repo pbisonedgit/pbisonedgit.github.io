@@ -20,6 +20,7 @@
 
       'index.news':'News',
       'index.n1':'May 2023: My first SCI-indexed paper, introducing a new structural health monitoring method, was accepted by Applied Science!',
+      'index.n2':'May 2025: I was awarded a scholarship from the China Scholarship Council (CSC) to support my PhD studies!',
 
       'contact.title':'Contact','contact.email':'E-mail',
 
@@ -52,6 +53,7 @@
       
       'index.news':'最新消息',
       'index.n1':'2023年5月：我的第一篇SCI论文被Applied Science接收！',
+      'index.n2':'2025年5月：我成功被录取为中国公派留学生（CSC202508060267）',
 
       'contact.title':'联系方式','contact.email':'电子邮箱',
 
