@@ -18,6 +18,12 @@
       'index.edu.master.detail1':'Thesis: Multimodal Modular Chain-of-Thought for Vision-Language Models in Automated Energy Performance Certificate Assessment  (Supervisor: Prof. Peter J. Bentley)',
       'index.edu.master.detail2':'GPA: ','index.edu.master.detail3':'Awards: ',
 
+      'index.edu.doctor.title':'Doctor',
+      'index.edu.doctor.meta':'Civil and Environmental Engineering Research (Ph.D.), Imperial College London, 2025-2029',
+      'index.edu.doctor.detail1':'Research Topic:',
+      'index.edu.doctor.detail2':'Supervisor: Prof. Arnab Majumdar',
+      'index.edu.doctor.detail3':'Sponsorship: China Scholarship Council (CSC) Scholarship',
+
       'index.news':'News',
       'index.n1':'May 2023: My first SCI-indexed paper, introducing a new structural health monitoring method, was accepted by Applied Science!',
       'index.n2':'May 2025: I was awarded a scholarship from the China Scholarship Council (CSC) to support my PhD studies!',
@@ -47,11 +53,18 @@
       'index.edu.bachelor.meta':'土木工程学士，同济大学，2020-2024',
       'index.edu.bachelor.detail1':'学位论文：地下步行空间的驻留行为与模拟研究（导师：刘芳教授）',
       'index.edu.bachelor.detail2':'GPA: 85.58%','index.edu.bachelor.detail3':'奖励及荣誉：同济大学优秀本科生奖学金（2022-2023）',
+
       'index.edu.master.title':'硕士教育',
       'index.edu.master.meta':'科学与数据密集型计算硕士，伦敦大学学院，2024-2025',
       'index.edu.master.detail1':'学位论文：用于基于视觉语言模型进行自动化能源效率证书测量的多模态模块化思维链（导师：Peter J. Bentley教授）',
       'index.edu.master.detail2':'GPA: ','index.edu.master.detail3':'奖励与荣誉: ',
       
+      'index.edu.doctor.title':'博士教育',
+      'index.edu.doctor.meta':'土木与环境工程博士，伦敦帝国理工学院，2025-2029',
+      'index.edu.doctor.detail1':'研究主题：',
+      'index.edu.doctor.detail2':'导师：Prof. Arnab Majumdar',
+      'index.edu.doctor.detail3':'奖学金：中国国家公派留学（CSC）奖学金',
+
       'index.news':'最新消息',
       'index.n1':'2023年5月：我的第一篇SCI论文被Applied Science接收！',
       'index.n2':'2025年5月：我成功被录取为中国公派留学生（CSC202508060267）',
