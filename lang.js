@@ -62,7 +62,7 @@
       'index.edu.doctor.title':'博士教育',
       'index.edu.doctor.meta':'土木与环境工程博士，伦敦帝国理工学院，2025-2029',
       'index.edu.doctor.detail1':'研究主题：',
-      'index.edu.doctor.detail2':'导师：Prof. Arnab Majumdar',
+      'index.edu.doctor.detail2':'导师：Arnab Majumdar教授',
       'index.edu.doctor.detail3':'奖学金：中国国家公派留学（CSC）奖学金',
 
       'index.news':'最新消息',
