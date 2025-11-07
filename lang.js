@@ -29,6 +29,7 @@
       'index.n2':'May 2025: I was awarded a scholarship from the China Scholarship Council (CSC) to support my PhD studies!',
       'index.n3':"October 2025: Invention patent was granted, awaiting license: A Method for Detecting Structural Damage in High-Rise Buildings Based on Ambient Seismic Noise. (Application No. 202211386898.1)",
       'index.n4':"November 2025: My new paper, 'Microscopic modelling of strolling pedestrians in underground transportation hubs with exhibitions', has been submitted to Frontiers of Structural and Civil Engineering for consideration.",
+      'index.n5':"November 2025: License of Invention patent 'A Method for Detecting Structural Damage in High-Rise Buildings Based on Ambient Seismic Noise' was granted. (Patent No. ZL 2022 1 1386898.1)",
 
       'contact.title':'Contact','contact.email':'E-mail',
 
@@ -41,7 +42,7 @@
       'projects.a':'I served as team leader for this research group. We explored the response characteristics of buildings and developed a structural health monitoring method.',
       'projectsb.title':'Participating in, Establishment of Intelligent Operation Platform for Critical Municipal Urban Infrastructure, (2020YFB2103300), National Key Research and Development Program.',
       'projects.b':'I served as a data collector and programmer on this project. We explored the mechanisms of human behavior in underground stations and proposed an operations optimization methodology.',
-      'projects.demo':'demo','projects.code':'code','projects.paper':'paper','projects.site':'website', 'projects.utilitypatent':'Utility patent', 'projects.inventionpatent':'Invention patent 1'
+      'projects.demo':'demo','projects.code':'code','projects.paper':'paper','projects.site':'website', 'projects.utilitypatent':'Utility patent', 'projects.inventionpatent1':'Invention patent 1'
     },
     zh: {
       'nav.research':'研究进展','nav.projects':'参与项目','nav.cv':'个人简历',
@@ -71,6 +72,7 @@
       'index.n2':'2025年5月：我成功被录取为中国公派留学生（CSC202508060267）',
       'index.n3':'2025年10月：发明专利授权，等待证书：基于地震背景噪音有效监测高层建筑损伤的监测方法（专利申请标识号：202211386898.1）',
       'index.n4':"2025年11月：我的新论文'Microscopic modelling of strolling pedestrians in underground transportation hubs with exhibitions'已提交至Frontiers of Structural and Civil Engineering以供审阅.",
+      'index.n5':"2025年11月：发明专利证书已获批：基于地震背景噪音有效监测高层建筑损伤的监测方法（中国专利号：ZL 2022 1 1386898.1）",
 
       'contact.title':'联系方式','contact.email':'电子邮箱',
 
@@ -83,7 +85,7 @@
       'projects.a':'我作为项目负责人，带领团队探索了建筑物的地震响应特征，并基于所提取到的特征模式开发出一种无损结构健康监测技术。',
       'projectsb.title':'参与，城市重大市政设施智能化运维与管控平台构建及应用示范，(2020YFB2103300)，国家重点研发计划。',
       'projects.b':'我作为数据采样员和程序员参与了刘芳教授的项目团队。我们探索了在地铁站中的行人行为模式，并基于此开发出考虑人因的基础设施管理优化方法。',
-      'projects.demo':'demo','projects.code':'开源代码','projects.paper':'发表论文','projects.site':'项目网站', 'projects.utilitypatent':'实用新型专利', 'projects.inventionpatent':'发明专利'
+      'projects.demo':'demo','projects.code':'开源代码','projects.paper':'发表论文','projects.site':'项目网站', 'projects.utilitypatent':'实用新型专利', 'projects.inventionpatent1':'发明专利1'
     }
   };
 
