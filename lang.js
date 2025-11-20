@@ -16,7 +16,7 @@
       'index.edu.master.title':'Master',
       'index.edu.master.meta':'M.Sc. in Scientific and Data Intensive Computing, University College London, 2024-2025',
       'index.edu.master.detail1':'Thesis: Multimodal Modular Chain-of-Thought for Vision-Language Models in Automated Energy Performance Certificate Assessment  (Supervisor: Prof. Peter J. Bentley)',
-      'index.edu.master.detail2':'GPA: ','index.edu.master.detail3':'Awards: ',
+      'index.edu.master.detail2':'GPA: 75.15%','index.edu.master.detail3':'Classification: Distinction',
 
       'index.edu.doctor.title':'Doctor',
       'index.edu.doctor.meta':'Civil and Environmental Engineering Research (Ph.D.), Imperial College London, 2025-2029',
@@ -60,7 +60,7 @@
       'index.edu.master.title':'硕士教育',
       'index.edu.master.meta':'科学与数据密集型计算硕士，伦敦大学学院，2024-2025',
       'index.edu.master.detail1':'学位论文：用于基于视觉语言模型进行自动化能源效率证书测量的多模态模块化思维链（导师：Peter J. Bentley教授）',
-      'index.edu.master.detail2':'GPA: ','index.edu.master.detail3':'奖励与荣誉: ',
+      'index.edu.master.detail2':'GPA: 75.15%','index.edu.master.detail3':'学位: Distinction一等学位',
       
       'index.edu.doctor.title':'博士教育',
       'index.edu.doctor.meta':'土木与环境工程博士，伦敦帝国理工学院，2025-2029',
