@@ -80,7 +80,7 @@
 
       'footer.rights':'保留所有权利。',
       'research.metaTitle':'研究进展','research.title':'研究进展','research.desc':'我的研究兴趣主要在用于交通风险管理的多模态算法。',
-      'research.pubs':'已发表论文1', 'research.patents':'发布专利',
+      'research.pubs':'已发表论文', 'research.patents':'发布专利',
 
       'projects.metaTitle':'Projects','projects.title':'参与项目','projects.desc':'以下为参与了且完成结题的国内外项目',
       'projectsa.title':'领导，基于地震背景噪音观测的超高建筑地震响应特征研究，（X2021441），2021-2022，4150元。',
