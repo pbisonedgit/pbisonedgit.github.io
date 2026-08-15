@@ -30,7 +30,7 @@
       'index.n3':"October 2025: Invention patent was granted, awaiting license: A Method for Detecting Structural Damage in High-Rise Buildings Based on Ambient Seismic Noise. (Application No. 202211386898.1)",
       'index.n4':"November 2025: My new paper, 'Microscopic modelling of strolling pedestrians in underground transportation hubs with exhibitions', has been submitted to Frontiers of Structural and Civil Engineering for consideration.",
       'index.n5':"November 2025: License of Invention patent 'A Method for Detecting Structural Damage in High-Rise Buildings Based on Ambient Seismic Noise' was granted. (Patent No. ZL 2022 1 1386898.1)",
-      'index.n6':"November 2025: New paper, 'Multimodal Modular Chain of Thoughts in Energy Performance Certificate Assessment', has been submitted to Expert Systems with Applications for consideration.",
+      'index.n6':"August 2026: A new co-authored paper, “Machine Learning–Driven Structural Health Monitoring of a High-Rise Building on Thick Sediments via Seismic Ambient Noise,” was published in Communications Engineering.",
 
       'contact.title':'Contact','contact.email':'E-mail',
 
@@ -74,7 +74,7 @@
       'index.n3':'2025年10月：发明专利授权，等待证书：基于地震背景噪音有效监测高层建筑损伤的监测方法（专利申请标识号：202211386898.1）',
       'index.n4':"2025年11月：我的新论文'Microscopic modelling of strolling pedestrians in underground transportation hubs with exhibitions'已提交至Frontiers of Structural and Civil Engineering以供审阅.",
       'index.n5':"2025年11月：发明专利证书已获批：基于地震背景噪音有效监测高层建筑损伤的监测方法（中国专利号：ZL 2022 1 1386898.1）",
-      'index.n6':"2025年11月：论文'Multimodal Modular Chain of Thoughts in Energy Performance Certificate Assessment'已提交至Expert Systems with Applications以供审阅.",
+      'index.n6':"2026年8月：论文'Machine learning–driven structural health monitoring of a high-rise building on thick sediments via seismic ambient noise'已在Communications Engineering期刊发表（https://doi.org/10.1038/s44172-026-00756-8）.",
 
       'contact.title':'联系方式','contact.email':'电子邮箱',
 
