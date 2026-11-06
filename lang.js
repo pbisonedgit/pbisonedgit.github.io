@@ -87,7 +87,7 @@
       'projects.a':'我作为项目负责人，带领团队探索了建筑物的地震响应特征，并基于所提取到的特征模式开发出一种无损结构健康监测技术。',
       'projectsb.title':'参与，城市重大市政设施智能化运维与管控平台构建及应用示范，(2020YFB2103300)，国家重点研发计划。',
       'projects.b':'我作为数据采样员和程序员加入了刘芳教授的项目团队。我们探索了在地铁站中的行人行为模式，并基于此开发出考虑人因的基础设施管理优化方法。',
-      'projects.demo':'demo','projects.code':'开源代码','projects.paper':'发表论文','projects.site':'项目网站', 'projects.utilitypatent':'实用新型专利', 'projects.inventionpatent1':'发明专利1'
+      'projects.demo':'demo','projects.code':'开源代码','projects.paper1':'发表论文1', 'projects.paper2':'发表论文2', 'projects.site':'项目网站', 'projects.utilitypatent':'实用新型专利', 'projects.inventionpatent1':'发明专利1'
     }
   };
 
